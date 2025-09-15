@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script} from "forge-std/Script.sol";
-import {MananCoin} from "../src/MananCoiān.sol";
+import {MananCoin} from "../src/MananCoin.sol";
 
-contract MananCoin is Script {
-    MananCoin public counter;
+contract MananCoinScript is Script {
+    MananCoin public mananCoin;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        counter = new MananCoin();
+        mananCoin = new MananCoin(address(this));
 
         vm.stopBroadcast();
     }
